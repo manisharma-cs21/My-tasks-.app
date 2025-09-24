@@ -6,7 +6,7 @@ export default function AddTask(){
     const [taskData,setTaskData]=useState();
     const handleAddTask= async()=>{
         console.log(taskData);
-        let result= await fetch('http://localhost:3200/add-task',{
+        let result= await fetch('https://tasks-backend-nk84.onrender.com/add-task',{
             credentials:'include',
             method:'Post',
             body:JSON.stringify(taskData),

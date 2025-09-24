@@ -14,7 +14,7 @@ export default function SignUp(){
     })
 
     const handleSignUP=async()=>{
-        let result= await fetch('http://localhost:3200/signup',{
+        let result= await fetch('https://tasks-backend-nk84.onrender.com/signup',{
             method:'Post',
             body:JSON.stringify(userData),
             headers:{

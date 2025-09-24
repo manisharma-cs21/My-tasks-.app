@@ -16,7 +16,7 @@ export default function UpdateTask(){
     },[])
 
     const getTask= async (id)=>{
-        let task=await fetch(`http://localhost:3200/task/`+id)
+        let task=await fetch(`https://tasks-backend-nk84.onrender.com/task/`+id)
         task= await task.json();
         if(task.result){
             setTaskData(task.result)

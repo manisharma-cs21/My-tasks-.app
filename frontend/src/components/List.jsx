@@ -14,7 +14,7 @@ export default function List() {
 
   // For getting Task
   const getListData = async () => {
-    let list = await fetch("http://localhost:3200/tasks",{
+    let list = await fetch("https://tasks-backend-nk84.onrender.com/tasks",{
       credentials:'include'
     });
     list = await list.json();
@@ -27,7 +27,7 @@ export default function List() {
 
   // For Deleting Task 
   const deleteTask=async(id)=>{
-    let item = await fetch("http://localhost:3200/delete/"+id,{method:'delete',credentials:'include',});
+    let item = await fetch("https://tasks-backend-nk84.onrender.com/"+id,{method:'delete',credentials:'include',});
     item = await item.json();
     if (item.success) {
         getListData();
@@ -65,7 +65,7 @@ export default function List() {
   const deleteMultiple= async ()=>{
     console.log(selectedTask);
 
-    let item = await fetch("http://localhost:3200/delete-multiple/",
+    let item = await fetch("https://tasks-backend-nk84.onrender.com/delete-multiple/",
         {
             credentials:'include',
             method:'delete',
