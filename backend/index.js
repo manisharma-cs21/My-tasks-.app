@@ -28,6 +28,7 @@ app.post('/signup', async (req, res) => {
 
         if (result) {
             jwt.sign(userData, 'Google', { expiresIn: '5d' }, (err, token) => {
+                if (err) return res.send({ success: false, msg: 'JWT error' });
                 // Set cookie
                 res.cookie('token', token, {
                     httpOnly: true,
@@ -60,6 +61,7 @@ app.post('/login', async (req, res) => {
 
         if (result) {
             jwt.sign(userData, 'Google', { expiresIn: '5d' }, (err, token) => {
+                if (err) return res.send({ success: false, msg: 'JWT error' });
                 // Set cookie
                 res.cookie('token', token, {
                     httpOnly: true,
