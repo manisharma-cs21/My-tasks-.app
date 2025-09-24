@@ -18,7 +18,7 @@ export default function SignUp(){
             method:'Post',
             body:JSON.stringify(userData),
             headers:{
-                'Content-Type':'Application/Json'
+                'Content-Type':'application/json'
             }
         })
         result= await result.json();

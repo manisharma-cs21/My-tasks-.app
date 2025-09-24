@@ -31,7 +31,7 @@ export default function UpdateTask(){
             method:'put',
             body:JSON.stringify(taskData),
             headers:{
-                'Content-type':'Application/json'
+                'Content-type':'application/json'
             }
         })
         task=await task.json();

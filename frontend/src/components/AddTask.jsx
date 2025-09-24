@@ -11,7 +11,7 @@ export default function AddTask(){
             method:'Post',
             body:JSON.stringify(taskData),
             headers:{
-                'Content-Type':'Application/Json'
+                'Content-Type':'application/json'
             }
         })
         result= await result.json();

@@ -15,6 +15,7 @@ export default function List() {
   // For getting Task
   const getListData = async () => {
     let list = await fetch("https://tasks-backend-nk84.onrender.com/tasks",{
+      method:'GET',
       credentials:'include'
     });
     list = await list.json();
@@ -71,7 +72,7 @@ export default function List() {
             method:'delete',
             body:JSON.stringify(selectedTask),
             headers:{
-                'Content-type':'Application/Json'           }
+                'Content-type':'application/json'           }
         });
     item = await item.json();
     if (item.success) {
